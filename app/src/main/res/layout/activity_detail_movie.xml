@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLow"
+    tools:context=".ui.detail.DetailMovieActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/ToolbarNoPadding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            app:layout_collapseMode="parallax"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:id="@+id/titleTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/app_title"
+                android:textAlignment="textStart"
+                android:textSize="@dimen/size_18"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layoutNSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/imageCV"
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                app:cardCornerRadius="@dimen/space_6"
+                app:cardElevation="@dimen/space_8"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/movieImageIV"
+                        android:layout_width="160dp"
+                        android:layout_height="240dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/todo"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:src="@drawable/ic_thumbnails" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/movieRateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dark_white_outline"
+                android:elevation="@dimen/space_8"
+                android:includeFontPadding="false"
+                android:paddingStart="@dimen/space_14"
+                android:paddingTop="@dimen/space_16"
+                android:paddingEnd="@dimen/space_14"
+                android:paddingBottom="@dimen/space_16"
+                android:text="@string/sample_0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_16"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imageCV"
+                app:layout_constraintEnd_toEndOf="@+id/imageCV"
+                app:layout_constraintStart_toStartOf="@id/imageCV"
+                app:layout_constraintTop_toBottomOf="@id/imageCV" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dataMovieCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_primary_corner_top_outline_r8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movieRateTV"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/movieTitleTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:includeFontPadding="false"
+                    android:paddingStart="@dimen/space_8"
+                    android:paddingEnd="@dimen/space_8"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_24"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Army of the Dead (2021)" />
+
+                <TextView
+                    android:id="@+id/infoGenreTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:includeFontPadding="false"
+                    android:textAlignment="center"
+                    android:textColor="@color/whiteLow"
+                    android:textSize="@dimen/size_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/movieTitleTV"
+                    app:layout_constraintStart_toStartOf="@id/movieTitleTV"
+                    app:layout_constraintTop_toBottomOf="@id/movieTitleTV"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="05/14/2021 • (US) Action, Horror, Thriller • 2h 28m" />
+
+                <TextView
+                    android:id="@+id/hintDescriptionTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:text="@string/overview"
+                    android:textColor="@color/whiteLow"
+                    android:textSize="@dimen/size_18"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/movieTitleTV"
+                    app:layout_constraintStart_toStartOf="@id/movieTitleTV"
+                    app:layout_constraintTop_toBottomOf="@id/infoGenreTV"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/descriptionTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/whiteLow"
+                    android:textSize="@dimen/size_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/movieTitleTV"
+                    app:layout_constraintStart_toStartOf="@id/movieTitleTV"
+                    app:layout_constraintTop_toBottomOf="@+id/hintDescriptionTV"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="@tools:sample/lorem/random" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/noDataTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="@string/no_data_detail"
+        android:textColor="@color/whiteLow"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:drawableTopCompat="@drawable/ic_cinema" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/loadingSKV"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="@dimen/space_200"
+        app:SpinKit_Color="@color/teal_700" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/favoriteFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/space_16"
+        android:backgroundTint="@color/teal_200"
+        android:contentDescription="@string/favorite_movie"
+        android:src="@drawable/ic_baseline_favorite_border_24"
+        app:tint="@color/colorHearth" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/unFavoriteFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/space_16"
+        android:backgroundTint="@color/teal_200"
+        android:contentDescription="@string/favorite_movie"
+        android:src="@drawable/ic_baseline_favorite_24"
+        android:visibility="gone"
+        app:tint="@color/colorHearth" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

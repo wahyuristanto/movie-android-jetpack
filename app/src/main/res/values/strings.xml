@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Jetpack MVVM</string>
+    <string name="app_title">Jetpack MovieDB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="movies">Movies</string>
+    <string name="tv_show">Tv Show</string>
+    <string name="todo">TODO</string>
+    <string name="overview">Overview</string>
+    <string name="powered_by">github.com/wahyuristanto • •</string>
+    <string name="no_detail">No detail movie</string>
+    <string name="sample_0">0.0</string>
+    <string name="no_data">Oops… data movie is empty!</string>
+    <string name="no_data_detail">Oops… detail movie is empty!</string>
+    <string name="str_info">%1$s • %2$s • %3$s • %4$s</string>
+    <string name="str_minutes">%1$s Minutes</string>
+    <string name="str_episodes">%1$s Episodes</string>
+    <string name="icon">icon</string>
+    <string name="favorite_movie_db">Favorite MovieDB</string>
+    <string name="favorite_movie">Favorite Movie</string>
+    <string name="add_favorite">Adding data to favorite</string>
+    <string name="del_favorite">Remove data from favorite</string>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/colorPrimaryLow"
+    app:cardCornerRadius="@dimen/space_8"
+    app:cardElevation="@dimen/space_3"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_3"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:cardCornerRadius="@dimen/space_8"
+            app:cardElevation="@dimen/space_0"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toTopOf="@+id/movieTitleTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/movieImageIV"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/icon"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintDimensionRatio="h,1.0:1.25"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/poster_spiderman" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/movieRateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_dark_white_outline"
+            android:elevation="4dp"
+            android:includeFontPadding="false"
+            android:paddingStart="@dimen/space_14"
+            android:paddingTop="@dimen/space_16"
+            android:paddingEnd="@dimen/space_14"
+            android:paddingBottom="@dimen/space_16"
+            android:text="@string/sample_0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/materialCardView"
+            app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/materialCardView"
+            app:layout_constraintTop_toBottomOf="@id/materialCardView" />
+
+        <TextView
+            android:id="@+id/movieTitleTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/movieRateTV"
+            app:layout_constraintTop_toBottomOf="@id/movieRateTV"
+            tools:text="Baju Baru" />
+
+        <TextView
+            android:id="@+id/movieDateTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:textColor="@color/whiteLow"
+            android:textSize="@dimen/size_14"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/movieRateTV"
+            app:layout_constraintTop_toBottomOf="@id/movieTitleTV"
+            tools:text="Oct 05, 2018" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
